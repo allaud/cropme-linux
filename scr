@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+from hashlib import md5
+import os
+
+
+fn = "/tmp/__image.png"
+path = "/path/to/images/folder/%s.png"
+url_mask = "http://server.com/%s.png"
+user = "username"
+server = "server.com"
+browser = "firefox"
+
+os.system("import %s" % fn)
+name = md5(open(fn, "r").read()).hexdigest()
+os.system("scp %s %s@%s:%s" % (fn, user, server, path % name, ))
+url = url_mask % name
+os.system("%s %s" % (browser, url, ))
+print url
+

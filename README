@@ -1,0 +1,12 @@
+==Setup
+
+Define variables and generate ssh keys:
+
+$ ssh-keygen -t rsa
+$ ssh server "mkdir .ssh; chmod 0700 .ssh"
+$ scp .ssh/id_rsa.pub server:.ssh/authorized_keys2
+
+Add scr command to command line:
+
+$ cp scr ~/bin/scr
+$ chmod +x ~/bin/scr
