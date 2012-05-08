@@ -1,4 +1,9 @@
-==Setup
+About
+
+This is a small python-based gyazo-like (http://gyazo.com) application for making screenshots of screen part. 
+Originally written and tested under Ubuntu 11.10 x64.
+
+Setup
 
 Define variables and generate ssh keys:
 
