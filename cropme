@@ -9,7 +9,7 @@ if sys.platform == "darwin":
     cmd = 'screencapture -s'
 else:
     cmd = 'import'
-    browser = 'firefox'
+    browser = 'x-www-browser'
 
 fn = "/tmp/__image.png"
 os.system('%s %s' % (cmd, fn, ))
