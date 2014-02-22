@@ -25,6 +25,10 @@ try:
     response = urllib2.urlopen(request)
     resp_text = response.read()
     if resp_text != 'error':
-        os.system("%s %s" % (browser, resp_text, ))
+        if xclip == 0:
+            os.system('notify-send "Url copied: %s"' % resp_text)
+            os.system('echo "%s"|xclip' % resp_text)
+        else:
+            os.system("%s %s" % (browser, resp_text, ))
 except Exception, detail:
     print "Error: %s" % detail
