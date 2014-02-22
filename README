@@ -1,17 +1,10 @@
+Linux-версия приложения для снятия скриншотов, работает с сервером cropme.ru
+
 About
 
-This is a small python-based gyazo-like (http://gyazo.com) application for making screenshots of screen part. 
+This is a small python-based application for making screenshots of screen part.
 Originally written and tested under Ubuntu 11.10 x64.
 
 Setup
 
-Define variables and generate ssh keys:
-
-$ ssh-keygen -t rsa
-$ ssh server "mkdir .ssh; chmod 0700 .ssh"
-$ scp .ssh/id_rsa.pub server:.ssh/authorized_keys2
-
-Add scr command to command line:
-
-$ cp scr ~/bin/scr
-$ chmod +x ~/bin/scr
+Setup instructions here: http://cropme.ru/
