@@ -9,7 +9,7 @@ if sys.platform == "darwin":
     cmd = 'screencapture -s'
 else:
     cmd = 'import'
-    browser = 'firefox'
+    browser = 'x-www-browser'
 
 fn = "/tmp/__image.png"
 os.system('%s %s' % (cmd, fn, ))
@@ -25,6 +25,11 @@ try:
     response = urllib2.urlopen(request)
     resp_text = response.read()
     if resp_text != 'error':
-        os.system("%s %s" % (browser, resp_text, ))
+        xclip = os.system('which xclip > /dev/null')
+        if xclip == 0:
+            os.system('notify-send "Url copied: %s"' % resp_text)
+            os.system('echo "%s"|xclip' % resp_text)
+        else:
+            os.system("%s %s" % (browser, resp_text, ))
 except Exception, detail:
     print "Error: %s" % detail
